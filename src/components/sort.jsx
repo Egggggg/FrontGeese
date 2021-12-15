@@ -1,8 +1,10 @@
+import { refreshGeese } from "../func.js";
+
 export default function Sort() {
 	return (
 		<div id="sort">
 			<label htmlFor="sort">Sort By:</label>
-			<select name="sort" id="sort">
+			<select name="sort" id="sort" onChange={refreshGeese}>
 				<option value="recent" selected="selected">
 					Recent
 				</option>
