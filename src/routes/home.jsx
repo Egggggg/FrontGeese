@@ -1,5 +1,4 @@
 import Sort from "../components/sort.jsx";
-import Geese from "../components/geese.jsx";
 
 export default function Home() {
 	return (
@@ -9,7 +8,6 @@ export default function Home() {
 				<h2>You found the Goose Archive!</h2>
 			</div>
 			<Sort />
-			<Geese />
 		</div>
 	);
 }
