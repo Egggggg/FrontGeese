@@ -1,13 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home } from "./routes/home";
-import "./index.css";
+import App from "./components/app";
+import Home from "./routes/home";
 
 ReactDOM.render(
 	<BrowserRouter>
 		<Routes>
-			<Route path="/" element={<Home />}></Route>
+			<Route path="/" element={<App />}>
+				<Route index element={<Home />} />
+			</Route>
 		</Routes>
 	</BrowserRouter>,
 	document.getElementById("root")
