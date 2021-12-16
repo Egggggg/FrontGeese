@@ -4,16 +4,18 @@ export default class Sort extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { value: "old" };
+		this.state = { value: "recent" };
 		this.handleChange = this.handleChange.bind(this);
+		this.refreshGeese = this.refreshGeese.bind(this);
 	}
 
-	handleChange(event) {
-		this.setState({ value: event.target.value });
+	async handleChange(event) {
+		await this.setState({ value: event.target.value });
+		this.refreshGeese();
 	}
 
-	getValue() {
-		return this.state.value;
+	refreshGeese() {
+		console.log(this.state.value);
 	}
 
 	render() {
@@ -24,7 +26,7 @@ export default class Sort extends React.Component {
 					name="sort"
 					id="sort"
 					value={this.state.value}
-					onChange={this.refreshGeese}
+					onChange={this.handleChange}
 				>
 					<option value="recent">Recent</option>
 					<option value="old">Old</option>
